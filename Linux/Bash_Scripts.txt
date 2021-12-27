@@ -1,0 +1,29 @@
+﻿Bash Scripts
+
+
+#!/bin/bash
+#Dealer_Schedules
+grep -E  '2:00:00 PM|5:00:00 AM|8:00:00 AM|8:00:00 PM|11:00:00 PM' 0310_Dealer_schedule | awk '{print $1, $2, $5, $6}'
+grep -E  '2:00:00 PM|5:00:00 AM|8:00:00 AM|8:00:00 PM|11:00:00 PM' 0312_Dealer_schedule | awk '{print $1, $2, $5, $6}'
+grep -E  '5:00:00 AM|8:00:00 AM|2:00:00 PM' 0315_Dealer_schedule | awk '{print $1, $2, $5, $6}’
+
+
+
+
+#!/bin/bash
+grep -E '12:00:00 PM|8:00:00 PM' 0310_Dealer_schedule | awk '{print $1, $2, $5, $6}'
+grep -E '12:00:00 PM|8:00:00 PM' 0312_Dealer_schedule | awk '{print $1, $2, $5, $6}'
+grep -E '12:00:00 PM|8:00:00 PM' 0315_Dealer_schedule | awk '{print $1, $2, $5, $6}’
+
+
+
+
+#!/bin/bash
+# Date is given  from the files
+# Script will show who is working the various games at a given time
+echo BlackJack
+grep -E '12:00:00 AM|5:00:00 PM' 0310_Dealer_schedule | awk '{print $1, $2, $5, $6}'
+echo Roulette
+grep -E '12:00:00 AM|5:00:00 PM' 0310_Dealer_schedule | awk '{print $1, $2, $3, $4}'
+echo Texashold'em
+grep -E '12:00:00 AM|5:00:00 PM' 0310_Dealer_schedule | awk '{print $1, $2, $7, $8}'
